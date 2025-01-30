@@ -1,1 +1,62 @@
-<h1>Shape Calculator</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle & Pyramid Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { width: 50%; margin: auto; }
+        input { margin: 5px; padding: 5px; }
+        button { margin: 10px; padding: 10px; }
+        .output { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Triangle & Pyramid Calculator</h1>
+        <img src="volume.png" alt="Triangle & Pyramid" width="200">
+        
+        <h2>Triangle (2D)</h2>
+        <label>Side A: <input type="number" id="sideA"></label>
+        <label>Side B: <input type="number" id="sideB"></label>
+        <label>Side C: <input type="number" id="sideC"></label>
+        <label>Base: <input type="number" id="base"></label>
+        <label>Height: <input type="number" id="height"></label>
+        <button onclick="calculateTriangle()">Calculate Triangle</button>
+        <p class="output" id="triangleOutput"></p>
+        
+        <h2>Pyramid (3D)</h2>
+        <label>Length: <input type="number" id="length"></label>
+        <label>Width: <input type="number" id="width"></label>
+        <label>Height: <input type="number" id="pyramidHeight"></label>
+        <button onclick="calculatePyramid()">Calculate Pyramid</button>
+        <p class="output" id="pyramidOutput"></p>
+    </div>
+
+    <script>
+        function calculateTriangle() {
+            let a = parseFloat(document.getElementById('sideA').value);
+            let b = parseFloat(document.getElementById('sideB').value);
+            let c = parseFloat(document.getElementById('sideC').value);
+            let base = parseFloat(document.getElementById('base').value);
+            let height = parseFloat(document.getElementById('height').value);
+            
+            let perimeter = a + b + c;
+            let area = 0.5 * base * height;
+            
+            document.getElementById('triangleOutput').innerText = `Perimeter: ${perimeter}, Area: ${area}`;
+        }
+        
+        function calculatePyramid() {
+            let length = parseFloat(document.getElementById('length').value);
+            let width = parseFloat(document.getElementById('width').value);
+            let height = parseFloat(document.getElementById('pyramidHeight').value);
+            
+            let volume = (1/3) * length * width * height;
+            
+            document.getElementById('pyramidOutput').innerText = `Volume: ${volume}`;
+        }
+    </script>
+</body>
+</html>

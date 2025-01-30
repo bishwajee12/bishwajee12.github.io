@@ -1,0 +1,29 @@
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  
+}
+
+h1, h2 {
+  text-align: center;
+  color: #4CAF50;
+  s
+};
+
+div{
+width:63.33%;
+float: right;
+
+}
+img{
+text-align: left;
+width: 400px;;
+height:450px;    
+}
+
+section{
+text-align: center;
+}
